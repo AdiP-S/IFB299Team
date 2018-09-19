@@ -1,0 +1,113 @@
+{% extends 'rental/base.html' %}
+{% block content %}
+<head>
+<style>
+.dropbtn {
+    background-color: #676b68;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #000000;}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.center {
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+</head>
+
+<body>
+
+  <div class="dropdown">
+    <button class="dropbtn">Database</button>
+    <div class="dropdown-content">
+      <a href="{%url 'customer-database'%}">Customer</a>
+      <a href="{%url 'rental-database'%}">Order</a>
+      <a href="{%url 'vehicle-database'%}">Vehicle</a>
+    </div>
+  </div>
+  <table class="center">
+    <tr>
+      <th>Car ID</th>
+      <th>Car Name</th>
+      <th>Car Model</th>
+      <th>Car Series</th>
+      <th>Car Series Year</th>
+      <th>Car Price New</th>
+      <th>Car Engine Size</th>
+      <th>Car Fuel System</th>
+      <th>Car Tank Capacity</th>
+      <th>Car Power</th>
+      <th>Car Seating Capacity</th>
+      <th>Car Standard Transmission</th>
+      <th>Car Body Type</th>
+      <th>Car Drive</th>
+      <th>Car Wheelbase</th>
+    </tr>
+      {% for vehicle in vehicles %}
+            <tr>
+              <td>{{vehicle.car_id}}</td>
+              <td>{{vehicle.car_makename}}</td>
+              <td>{{vehicle.car_model}}</td>
+              <td>{{vehicle.car_series}}</td>
+              <td>{{vehicle.car_seriesyear}}</td>
+              <td>{{vehicle.car_pricenew}}</td>
+              <td>{{vehicle.car_enginesize}}</td>
+              <td>{{vehicle.car_fuelsystem}}</td>
+              <td>{{vehicle.car_tankcapacity}}</td>
+              <td>{{vehicle.car_power}}</td>
+              <td>{{vehicle.car_seatingcapacity}}</td>
+              <td>{{vehicle.car_standardtransmission}}</td>
+              <td>{{vehicle.car_bodytype}}</td>
+              <td>{{vehicle.car_drive}}</td>
+              <td>{{vehicle.car_wheelbase}}</td>
+            </tr>
+      {% endfor %}
+    </table>
+</body>
+
+{% endblock content %}

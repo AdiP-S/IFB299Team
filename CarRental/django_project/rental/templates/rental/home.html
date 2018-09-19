@@ -1,15 +1,4 @@
 {% extends 'rental/base.html' %}
 {% block content %}
-      {% for customer in customers %}
-        <article class="media content-section">
-          <div class="media-body">
-            <div class="article-metadata">
-              <a class="mr-2" href="#">{{ customer.customer_name }}</a>
-              <small class="text-muted">{{customer.customer_birthday}}</small>
-            </div>
-            <h2><a class="article-title" href="#">{{ customer.customer_occupation }}</a></h2>
-            <p class="article-content">{{ customer.customer_address }}</p>
-          </div>
-        </article>
-      {% endfor %}
+      <h1>This is the homepage</h1>
 {% endblock content %}

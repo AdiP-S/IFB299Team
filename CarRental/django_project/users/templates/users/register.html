@@ -1,6 +1,8 @@
 {% extends 'rental/base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
+<a href="{%url 'customer-database'%}"><button class="btn btn-outline-info">Customer</button></a>
+<a href="{%url 'rental-database'%}"><button class="btn btn-outline-info" >Order</button></a>
     <div class="content-section">
         <form method="post">
           {% csrf_token %}

@@ -1,0 +1,106 @@
+{% extends 'rental/base.html' %}
+{% block content %}
+<head>
+<style>
+.dropbtn {
+    background-color: #676b68;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #000000;}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+  <div class="dropdown">
+    <button class="dropbtn">Database</button>
+    <div class="dropdown-content">
+      <a href="{%url 'customer-database'%}">Customer</a>
+      <a href="{%url 'rental-database'%}">Order</a>
+      <a href="{%url 'vehicle-database'%}">Vehicle</a>
+    </div>
+  </div>
+  <table>
+    <tr>
+      <th>Order ID</th>
+      <th>Order Create Date</th>
+      <th>Order Pickup Date</th>
+      <th>Pickup Store</th>
+      <th>Pickup Store Address</th>
+      <th>Pickup Store Number</th>
+      <th>Pickup Store City</th>
+      <th>Pickup Store State</th>
+      <th>Order Return Date</th>
+      <th>Return Store</th>
+      <th>Return Store Address</th>
+      <th>Return Store Number</th>
+      <th>Return Store City</th>
+      <th>Return Store State</th>
+
+    </tr>
+      {% for order in orders %}
+
+            <tr>
+              <td>{{order.order_id}}</td>
+              <td>{{order.order_createdate}}</td>
+              <td>{{order.order_pickupdate}}</td>
+              <td>{{order.pickup_store_name}}</td>
+              <td>{{order.pickup_store_address}}</td>
+              <td>{{order.pickup_store_phone}}</td>
+              <td>{{order.pickup_store_city}}</td>
+              <td>{{order.pickup_store_state_name}}</td>
+              <td>{{order.order_returndate}}</td>
+              <td>{{order.return_store_name}}</td>
+              <td>{{order.return_store_address}}</td>
+              <td>{{order.return_store_phone}}</td>
+              <td>{{order.return_store_city}}</td>
+              <td>{{order.return_store_state}}</td>
+
+            </tr>
+      {% endfor %}
+    </table>
+</body>
+
+{% endblock content %}
