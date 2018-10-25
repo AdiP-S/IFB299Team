@@ -1,4 +1,38 @@
 {% extends 'rental/base.html' %}
+
 {% block content %}
-<h1>About Page</h1>
+<div class="home-bg">
+    <div class="home-text">
+        <div class="Welcome" >
+            <div id="AboutUs">
+                <h1 style="color:cadetblue " >About Us</h1>
+                <h3 style="color:cadetblue ">We're a professional vehicle hiring place,
+                    with the access to premium vehicles catering for all people with business,
+                    travellers
+                </h3><br><br>
+                <h2 style="color:cadetblue " >Nearby Stores</h2>
+            </div><br>
+            <div id="postCodeandState">
+                <h3 style="color:cadetblue " >State</h3>
+                <input list="State" name="State" placeholder="--Choose your state--" style="color:cadetblue " ><br>
+                <datalist id="State">
+                    <option value="New South Wales">
+                    <option value="Queensland">
+                    <option value="South Australia">
+                    <option value="Tasmania">
+                    <option value="Victoria">
+                </datalist>
+                <br>
+                <h3 style="color:cadetblue " >Postcode</h3>
+                <input type="text" name="postCode" placeholder="--Choose your postcode--" style="color:cadetblue " ><br><br>
+            </div><br>
+            <div id="abc">
+                <h5><i class="fa fa-check-circle-o" aria-hidden="true">&nbsp;</i>&nbsp;can you put </h5>
+                <h5><i class="fa fa-check-circle-o" aria-hidden="true">&nbsp;</i>&nbsp;some result here </h5>
+                <h5><i class="fa fa-check-circle-o" aria-hidden="true">&nbsp;</i>&nbsp;I need go to sleep, I have work tomorrow :smile: </h5>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock content %}

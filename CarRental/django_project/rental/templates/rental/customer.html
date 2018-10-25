@@ -36,54 +36,46 @@
 .dropdown:hover .dropdown-content {display: block;}
 
 .dropdown:hover .dropbtn {background-color: #000000;}
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
 
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
 </style>
 </head>
 <body>
-  <div class="dropdown">
-    <button class="dropbtn">Database</button>
-    <div class="dropdown-content">
-      <a href="{%url 'customer-database'%}">Customer</a>
-      <a href="{%url 'rental-database'%}">Order</a>
-      <a href="{%url 'vehicle-database'%}">Vehicle</a>
+  <div id="wrapper">
+    <div class="dropdown">
+      <button class="dropbtn">Database</button>
+      <div class="dropdown-content">
+        <a href="{%url 'customer-database'%}">Customer</a>
+        <a href="{%url 'rental-database'%}">Order</a>
+        <a href="{%url 'vehicle-database'%}">Vehicle</a>
+      </div>
     </div>
   </div>
-  <table>
-    <tr>
-      <th>Customer ID</th>
-      <th>Customer Name</th>
-      <th>Customer Phone</th>
-      <th>Customer Address</th>
-      <th>Customer Birthday</th>
-      <th>Customer Occupation</th>
-      <th>Customer Gender</th>
-    </tr>
-      {% for customer in customers %}
-            <tr>
-              <td>{{customer.customer_id}}</td>
-              <td>{{customer.customer_name}}</td>
-              <td>{{customer.customer_phone}}</td>
-              <td>{{customer.customer_address}}</td>
-              <td>{{customer.customer_birthday}}</td>
-              <td>{{customer.customer_occupation}}</td>
-              <td>{{customer.customer_gender}}</td>
-            </tr>
+  <div id="database">
+    <!-- Creates the table with the table headers -->
+    <table>
+      <tr>
+        <th>Customer ID</th>
+        <th>Customer Name</th>
+        <th>Customer Phone</th>
+        <th>Customer Address</th>
+        <th>Customer Birthday</th>
+        <th>Customer Occupation</th>
+        <th>Customer Gender</th>
+      </tr>
+        {% for customer in customers %}
+        <!-- Fill in the row of the tables -->
+              <tr>
+                <td>{{customer.customer_id}}</td>
+                <td>{{customer.customer_name}}</td>
+                <td>{{customer.customer_phone}}</td>
+                <td>{{customer.customer_address}}</td>
+                <td>{{customer.customer_birthday}}</td>
+                <td>{{customer.customer_occupation}}</td>
+                <td>{{customer.customer_gender}}</td>
+              </tr>
       {% endfor %}
     </table>
+  </div>
 </body>
 
 {% endblock content %}

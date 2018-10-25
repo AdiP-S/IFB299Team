@@ -1,5 +1,6 @@
 {% extends 'rental/base.html' %}
 {% block content %}
+<!--CSS for button-->
 <head>
 <style>
 .dropbtn {
@@ -8,10 +9,11 @@
     padding: 16px;
     font-size: 16px;
     border: none;
+    margin: auto;
 }
 
 .dropdown {
-    position: relative;
+    margin: auto;
     display: inline-block;
 }
 
@@ -36,24 +38,12 @@
 .dropdown:hover .dropdown-content {display: block;}
 
 .dropdown:hover .dropbtn {background-color: #000000;}
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
 
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
 </style>
 </head>
 <body>
+  <!-- Dropdown button -->
+<div id="wrapper">
   <div class="dropdown">
     <button class="dropbtn">Database</button>
     <div class="dropdown-content">
@@ -62,45 +52,49 @@ tr:nth-child(even) {
       <a href="{%url 'vehicle-database'%}">Vehicle</a>
     </div>
   </div>
-  <table>
-    <tr>
-      <th>Order ID</th>
-      <th>Order Create Date</th>
-      <th>Order Pickup Date</th>
-      <th>Pickup Store</th>
-      <th>Pickup Store Address</th>
-      <th>Pickup Store Number</th>
-      <th>Pickup Store City</th>
-      <th>Pickup Store State</th>
-      <th>Order Return Date</th>
-      <th>Return Store</th>
-      <th>Return Store Address</th>
-      <th>Return Store Number</th>
-      <th>Return Store City</th>
-      <th>Return Store State</th>
+</div>
+  <!-- Database Table Title-->
+  <div id="database">
+      <table>
+        <tr>
+          <th>Order ID</th>
+          <th>Order Create Date</th>
+          <th>Order Pickup Date</th>
+          <th>Pickup Store</th>
+          <th>Pickup Store Address</th>
+          <th>Pickup Store Number</th>
+          <th>Pickup Store City</th>
+          <th>Pickup Store State</th>
+          <th>Order Return Date</th>
+          <th>Return Store</th>
+          <th>Return Store Address</th>
+          <th>Return Store Number</th>
+          <th>Return Store City</th>
+          <th>Return Store State</th>
 
-    </tr>
-      {% for order in orders %}
+        </tr>
+        <!-- Database Table value -->
+          {% for order in orders %}
+                <tr>
+                  <td>{{order.order_id}}</td>
+                  <td>{{order.order_createdate}}</td>
+                  <td>{{order.order_pickupdate}}</td>
+                  <td>{{order.pickup_store_name}}</td>
+                  <td>{{order.pickup_store_address}}</td>
+                  <td>{{order.pickup_store_phone}}</td>
+                  <td>{{order.pickup_store_city}}</td>
+                  <td>{{order.pickup_store_state_name}}</td>
+                  <td>{{order.order_returndate}}</td>
+                  <td>{{order.return_store_name}}</td>
+                  <td>{{order.return_store_address}}</td>
+                  <td>{{order.return_store_phone}}</td>
+                  <td>{{order.return_store_city}}</td>
+                  <td>{{order.return_store_state}}</td>
 
-            <tr>
-              <td>{{order.order_id}}</td>
-              <td>{{order.order_createdate}}</td>
-              <td>{{order.order_pickupdate}}</td>
-              <td>{{order.pickup_store_name}}</td>
-              <td>{{order.pickup_store_address}}</td>
-              <td>{{order.pickup_store_phone}}</td>
-              <td>{{order.pickup_store_city}}</td>
-              <td>{{order.pickup_store_state_name}}</td>
-              <td>{{order.order_returndate}}</td>
-              <td>{{order.return_store_name}}</td>
-              <td>{{order.return_store_address}}</td>
-              <td>{{order.return_store_phone}}</td>
-              <td>{{order.return_store_city}}</td>
-              <td>{{order.return_store_state}}</td>
-
-            </tr>
-      {% endfor %}
-    </table>
+                </tr>
+          {% endfor %}
+        </table>
+  </div>
 </body>
 
 {% endblock content %}

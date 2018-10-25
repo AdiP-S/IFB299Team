@@ -1,0 +1,81 @@
+{% extends 'rental/base.html' %}
+
+{% block content %}
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta-2/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.2/css/mdb.min.css" rel="stylesheet">
+
+
+
+<h1 align='center'>Yearly Performance</h1>
+<div id= "wrapper">
+  <div class="dropdown show">
+    <a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Performance
+    </a>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <a class="dropdown-item" href="{%url 'rental-chart'%}">Yearly</a>
+      <a class="dropdown-item" href="{%url 'rental-monthly-chart'%}">Monthly</a>
+    </div>
+  </div>
+</div>
+<p id="demo"></p>
+<div class="container">
+  <canvas id="barChart"></canvas>
+</div>
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta-2/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.2/js/mdb.min.js"></script>
+
+<!-- Script to create the graphs -->
+<script>
+
+  Chart.defaults.global.defaultFontColor = 'white';
+
+  //bar
+  var ctxB = document.getElementById("barChart").getContext('2d');
+  var myBarChart = new Chart(ctxB, {
+      type: 'bar',
+      data: {
+          labels: ["2005", "2006", "2007"],
+          datasets: [{
+              label: 'Number of orders',
+              data: [{{orders}}, {{orders1}}, {{orders2}}],
+              backgroundColor: [
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+
+              ],
+              borderColor: [
+                  'rgba(255,99,132,1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero:true
+                  }
+              }]
+          }
+      }
+  });
+</script>
+
+
+{% endblock content %}

@@ -1,55 +1,546 @@
-.dropbtn {
-    background-color: #676b68;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
+body {
+  background-image: url("images/bgg.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  margin:0;
+  color: #333333;
+  margin-top: 5rem;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.dropdown {
-    position: relative;
-    display: inline-block;
+h1, h2, h3, h4, h5, h6 {
+  color: #444444;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+ul {
+  margin: 0;
 }
 
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+.bg-steel {
+  background-color: #c08e22;
 }
 
-.dropdown-content a:hover {background-color: #ddd;}
+.site-header .navbar-nav .nav-link {
+  display: block;
+  overflow: hidden;
+  color: #ffffff;
+  text-align: center;
+  padding: 9px 9px;
+  text-decoration: none;
+}
 
-.dropdown:hover .dropdown-content {display: block;}
+.site-header .navbar-nav .nav-link:hover {
+  color: #dfdbdb;
+}
 
-.dropdown:hover .dropbtn {background-color: #676b68;}
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
 
+.content-section {
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.article-title {
+  color: #444444;
+}
+
+a.article-title:hover {
+  color: rgb(243, 239, 239);
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.article-metadata a:hover {
+  color:white;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+
+/*Bean*/
+.Welcome {
+  width: 80%;
+  margin: auto;
+  text-align: left;
+
+}
+.SearchCarBox {
+  width: 80%;
+  margin: auto;
+  text-align: left;
+
+}
+#searchmenu{
+  width: 400px;
+  height:420px;
+  background-color:rgba(238, 163, 23, 0.521);
+  background-size: cover;
+
+}
+#layoutSearchmenuTop{
+  width: 100%;
+  margin: auto;
+  height:30%;
+  text-align: left;
+  background-color: #e7b039
+
+}
+#sublayoutTop{
+  background-color: #c08e22;
+  width: 100%;
+  margin: auto;
+  height:30%;
+  text-align: center;
+
+}
+/*Design Search bar*/
+
+input[type=text] {
+  margin-bottom: 15px;
+  float: left;
+  width: 100%;
+  padding: 6px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+#layoutSearchmenuLeft{
+  width: 49%;
+  height:50%;
+  text-align: left;
+
+
+}
+#layoutSearchmenuRight{
+  width: 49%;
+  height:50%;
+  text-align: right;
+
+
+}
+#layoutSearchmenuBot-left{
+  width: 49%;
+  margin-top: 15px;
+  height: 10%;
+  text-align: left;
+
+}
+
+#layoutSearchmenuBot-right{
+  width: 41%;
+  margin-top: 5px;
+  height: 15%;
+
+  text-align: left;
+}
+
+/*Footer in Home page*/
+#footer{
+  width:100%;
+  height: 200px;
+  background-color:#c08e22;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#footer-left{
+
+  width: 40%;
+  height: 100%;
+
+}
+#footer-middle{
+  text-align: center;
+  width: 70%;
+  height: 100%;
+
+}
+#footer-right{
+  width: 61%;
+  height: 100%;
+
+}
+#footer-subright{
+  margin: auto;
+  width: 30%;
+  height:100%;
+  background-image: url("images/car-flat.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+
+
+/*View Car page*/
+#coverInfor{
+  float:right;
+  width:803px;
+  height: 100%;
+
+}
+#Information{
+  margin:auto;
+  width:795px;
+  height: 100%;
+}
+
+#left{
+  float: left;
+  width: 600px;
+  height: 200px;
+  background-color: #c08e22b0;
+}
+#right{
+  float:right;
+  width:180px;
+  height:200px;
+  text-align: center;
+}
+#infor {
+  width: 270px;
+  height:197px;
+  padding: 5px;
+  float: right;
+
+}
+#bmw {
+  float: left;
+  background-image: url("images/BMW.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:300px;
+  height: 197px;
+}
+#landrover {
+  float: left;
+  background-image: url("images/land rover.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:300px;
+  height: 197px;
+}
+#peugeot {
+  float: left;
+  background-image: url("images/peugeot.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:300px;
+  height: 197px;
+}
+#nissan {
+  float: left;
+  background-image: url("images/nissan.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:300px;
+  height: 197px;
+}
+#mitsubishi {
+  float: left;
+  background-image: url("images/mitsubishi.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:300px;
+  height: 197px;
+}
+#mercedes{
+  float: left;
+  background-image: url("images/Mercedes.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:300px;
+  height: 197px;
+}
+#renault {
+  float: left;
+  background-image: url("images/renault.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:300px;
+  height: 197px;
+}
+#saab {
+  float: left;
+  background-image: url("images/saab.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:300px;
+  height: 197px;
+}
+#toyota {
+  float: left;
+  background-image: url("images/toyota.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:300px;
+  height: 197px;
+}
+#volks {
+  float: left;
+  background-image: url("images/Volkswagen.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:300px;
+  height: 197px;
+}
+#mazda {
+  float: left;
+  background-image: url("images/mazda.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:300px;
+  height: 197px;
+}
+#datsun {
+  float: left;
+  background-image: url("images/datsun.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:300px;
+  height: 197px;
+}
+#chrysler {
+  float: left;
+  background-image: url("images/Chrysler.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:300px;
+  height: 197px;
+}
+#audi {
+  float: left;
+  background-image: url("images/audi.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:300px;
+  height: 197px;
+}
+#alfa {
+  float: left;
+  background-image: url("images/alfa romeo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:300px;
+  height: 197px;
+}
+#honda {
+  float: left;
+  background-image: url("images/honda.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:300px;
+  height: 197px;
+}
+#eunos {
+  float: left;
+  background-image: url("images/eunos.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:300px;
+  height: 197px;
+}
+#volvo {
+  float: left;
+  background-image: url("images/volvo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:300px;
+  height: 197px;
+}
+
+/*database page Css*/
+#database{
+  background-color:rgba(238, 163, 23, 0.521);
+  margin:auto;
+  width:90%;
+  height: 100%;
+}
+
+/*Table*/
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
 }
-
-table.center {
-    margin-left:auto;
-    margin-right:auto;
-  }
-
 td, th {
-    border: 1px solid #dddddd;
+    border: 1px solid #000000;
     text-align: left;
-    padding: 10px;
+    padding: 8px;
 }
-
 tr:nth-child(even) {
     background-color: #dddddd;
+}
+
+th {
+  background-color: #eef3f8;
+  color: rgb(148, 143, 143);
+}
+.button {
+  background-color: rgba(6, 7, 8, 0.541);
+  border: none;
+  color: rgb(194, 154, 23);
+  padding: 5px 23px;
+  text-align: center;
+  text-decoration:none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+/*The about page*/
+#AboutUs{
+  margin: auto;
+  text-align:center;
+  border: 1px solid;
+}
+
+#postCodeandState{
+  background-color: #df9d0e80;
+  background-attachment: fixed;
+  margin: auto;
+  text-align: center;
+  width: 18%;
+  border: 1px solid;
+}
+
+#displayResult{
+  background-color: #df9d0e80;
+  margin:auto;
+  text-align: left;
+  border: 1px solid;
+  width: 50%;
+
+}
+/*Checkout Form*/
+#coverForm{
+  margin: auto;
+  width: 600px;
+  height: 100%;
+}
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.containe {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom:15px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-containe {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn1 {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn1:hover {
+  background-color: #45a049;
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+/*CheckBox*/
+#wrapper {
+  text-align: center;
 }

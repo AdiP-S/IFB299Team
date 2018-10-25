@@ -1,0 +1,200 @@
+{% extends 'rental/base.html' %}
+
+{% block content %}
+<style>
+#templateCover{
+      background-color:rgba(199, 192, 178, 0.863);
+      margin: auto;
+      width: 955px;
+      height:100%;
+}
+#filter{
+      float:left;
+      width: 145px;
+      height:100%;
+}
+/*Style of the filter*/
+.filterDiv {
+      background-color: rgba(189, 130, 34, 0.521);
+      color: rgb(0, 0, 0);
+      width: 100%;
+      height: 200px;
+      text-align: left;
+      margin: 2px;
+      display:none;
+      }
+
+      .show {
+      display: block;
+      }
+
+      .container {
+
+      overflow: hidden;
+      }
+
+      /* Style the buttons */
+      .btn {
+      background-color: rgba(128, 125, 120, 0.774);
+      width: 100%;
+      border: none;
+      outline: none;
+      padding: 12px 16px;
+      cursor: pointer;
+      color: white;
+      }
+
+      .btn:hover {
+      background-color: rgba(216, 153, 18, 0.514);
+      }
+
+      .btn.active {
+      background-color: rgba(131, 129, 129, 0.349);
+      color: black;
+      }
+</style>
+
+<!--body-->
+<div id="templateCover" style="background-color: rgba(255, 187, 0, 0.5)">
+      <div id="coverInfor">
+            <div id="Information">
+                  {% for order in orders %}
+                    {% if order.car_makename != 'NULL' %}
+                    <div class="filterDiv {{order.car_makename}}" >
+                          <div id="left">
+                                <div id="infor">
+                                      <h4> {{order.car_makename}} </h4>
+                                      <i class="fa fa-car" aria-hidden="true"></i>&nbsp;{{order.car_model}}<br>
+                                      <i class="fa fa-users" aria-hidden="true"></i>&nbsp;{{order.car_seatingcapacity}} Seats<br>
+                                      <i class="fa fa-history" aria-hidden="true"></i>&nbsp;Year: {{order.car_seriesyear}}<br>
+                                      <i class="fa fa-cogs" aria-hidden="true"></i>&nbsp;Power: {{order.car_power}}
+                                </div>
+                                <!--Puts the logo of the vehicles based on what the vehicle name is-->
+                                {% if order.car_makename == 'BMW' %}
+                                  <div id="bmw"></div>
+                                {% elif order.car_makename == 'LAND ROVER'%}
+                                  <div id="landrover"></div>
+                                {% elif order.car_makename == 'PEUGEOT' %}
+                                  <div id="peugeot"></div>
+                                {% elif order.car_makename == 'NISSAN' %}
+                                  <div id="nissan"></div>
+                                {% elif order.car_makename == 'CHRYSLER' %}
+                                  <div id="chrysler"></div>
+                                {% elif order.car_makename == 'AUDI' %}
+                                  <div id="audi"></div>
+                                {% elif order.car_makename == 'MITSUBISHI' %}
+                                  <div id="mitsubishi"></div>
+                                {% elif order.car_makename == 'MAZDA' %}
+                                  <div id="mazda"></div>
+                                {% elif order.car_makename == 'TOYOTA' %}
+                                  <div id="toyota"></div>
+                                {% elif order.car_makename == 'SAAB' %}
+                                  <div id="saab"></div>
+                                {% elif order.car_makename == 'HONDA' %}
+                                  <div id="honda"></div>
+                                {% elif order.car_makename == 'VOLKSWAGEN' %}
+                                  <div id="volks"></div>
+                                {% elif order.car_makename == 'ALFA ROMEO' %}
+                                  <div id="alfa"></div>
+                                {% elif order.car_makename == 'MERCEDES-BENZ' %}
+                                  <div id="mercedes"></div>
+                                {% elif order.car_makename == 'RENAULT' %}
+                                  <div id="renault"></div>
+                                {% elif order.car_makename == 'EUNOS' %}
+                                  <div id="eunos"></div>
+                                {% elif order.car_makename == 'DATSUN' %}
+                                  <div id="datsun"></div>
+                                {% elif order.car_makename == 'VOLVO' %}
+                                  <div id="volvo"></div>
+                                {% endif %}
+                          </div>
+                          <!--Creates the booking button-->
+                          <div id="right" style="background-color: rgba(255, 187, 0, 0.5)"><br>
+                                <h5>Price</h5>
+                                <h3 style="color:white"> AUD {{order.car_pricenew}} </h3><br>
+                                <a href="{% url 'rental-Checkout' %}" <input type="button" class="button" value="Book Now">Book Now</a>
+                          </div>
+                    </div>
+                    {% endif %}
+                  {% endfor %}
+            </div>
+      </div>
+      <!--Creates the filter buttons to filter through what vehicle there are -->
+      <div id="filter" style="background-color: rgba(255, 174, 0, 0.281)">
+            <div id="myBtnContainer">
+                  <button class="btn active" onclick="filterSelection('all')"> Show all</button><br><br>
+                  <button class="btn" onclick="filterSelection('LAND ROVER')"> Land Rover</button><br><br>
+                  <button class="btn" onclick="filterSelection('BMW')"> BMW</button><br><br>
+                  <button class="btn" onclick="filterSelection('PEUGEOT')"> Peugeot</button><br><br>
+                  <button class="btn" onclick="filterSelection('NISSAN')"> Nissan</button><br><br>
+                  <button class="btn" onclick="filterSelection('CHRYSLER')"> Chrysler</button><br><br>
+                  <button class="btn" onclick="filterSelection('MITSUBISHI')"> Mitsubishi</button><br><br>
+                  <button class="btn" onclick="filterSelection('MAZDA')"> Mazda</button><br><br>
+                  <button class="btn" onclick="filterSelection('TOYOTA')"> Toyota</button><br><br>
+                  <button class="btn" onclick="filterSelection('AUDI')"> Audi</button><br><br>
+                  <button class="btn" onclick="filterSelection('SAAB')"> Saab</button><br><br>
+                  <button class="btn" onclick="filterSelection('HONDA')"> Honda</button><br><br>
+                  <button class="btn" onclick="filterSelection('VOLKSWAGEN')"> Volkswagen</button><br><br>
+                  <button class="btn" onclick="filterSelection('ALFA ROMEO')"> Alfa Romeo</button><br><br>
+                  <button class="btn" onclick="filterSelection('MERCEDES-BENZ')"> Mercedes-Benz</button><br><br>
+                  <button class="btn" onclick="filterSelection('RENAULT')"> Renault</button><br><br>
+                  <button class="btn" onclick="filterSelection('DATSUN')"> Datsun</button><br><br>
+                  <button class="btn" onclick="filterSelection('EUNOS')"> Eunos</button><br><br>
+                  <button class="btn" onclick="filterSelection('VOLVO')"> Volvo</button><br><br>
+            </div>
+      </div>
+</div>
+
+
+
+
+
+
+<!--Javascript for the filtering function-->
+<script>
+      filterSelection("all")
+      function filterSelection(c) {
+            var x, i;
+            x = document.getElementsByClassName("filterDiv");
+            if (c == "all") c = "";
+            for (i = 0; i < x.length; i++) {
+            w3RemoveClass(x[i], "show");
+            if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+            }
+      }
+
+      function w3AddClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+            if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+            }
+      }
+
+      function w3RemoveClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+            while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
+            }
+            }
+            element.className = arr1.join(" ");
+      }
+
+      // Add active class to the current button (highlight it)
+      var btnContainer = document.getElementById("myBtnContainer");
+      var btns = btnContainer.getElementsByClassName("btn");
+      for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function(){
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+            });
+      }
+</script>
+
+
+{% endblock content %}
