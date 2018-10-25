@@ -1,0 +1,38 @@
+{% extends 'rental/base_user.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <div class="content-section">
+        <form method="post">
+          {% csrf_token %}
+
+          <fieldset class ="form-group">
+            <legend class="border-bottom mb-4">Sign Up</legend>
+            <p>User Type</p>
+            <div class="dropdown show">
+              <a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                User Type
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="{%url 'customer_register'%}">Customer</a>
+                <a class="dropdown-item" href="{%url 'register'%}">Employee</a>
+                <a class="dropdown-item" href="{%url 'manager_register'%}">Manager</a>
+              </div>
+            </div>
+            {{form|crispy}}
+          </fieldset>
+
+          <div class="form-group">
+            <button class="btn-btn-outline-info" type="submit">Sign Up</button>
+          </div>
+
+        </form>
+        <div class="border-top pt-3">
+          <small class = "text-muted">
+            Already Have An Account? <a class= "ml-2" href ="{% url 'login' %}">Sign In</a>
+          </small>
+        </div>
+    </div>
+
+
+{% endblock content %}

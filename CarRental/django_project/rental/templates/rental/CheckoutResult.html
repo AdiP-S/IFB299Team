@@ -1,0 +1,9 @@
+{% extends 'rental/base.html' %}
+{% block content %}
+<b><h1>Your order has been received &nbsp;<i class="fa fa-check-circle-o" aria-hidden="true" style="color:rgb(48, 199, 48)"></i></h1></b><br>
+<b><h5 style="color:rgb(46, 160, 17)">Thank you for your purchase </h5></b>
+<h6>Order ID: #12637828292837</h6>
+<h6>You will receive an order confirmation email with details of your order and a link to track its progress</h6>
+<h6>Click <a href="{% url 'rental-home' %}">here</a> to home page</h6>
+
+{% endblock content%}

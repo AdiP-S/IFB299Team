@@ -37,40 +37,23 @@
 
 .dropdown:hover .dropbtn {background-color: #000000;}
 
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-table.center {
-    margin-left:auto;
-    margin-right:auto;
-  }
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 10px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
 </style>
 </head>
-
 <body>
 
-  <div class="dropdown">
-    <button class="dropbtn">Database</button>
-    <div class="dropdown-content">
-      <a href="{%url 'customer-database'%}">Customer</a>
-      <a href="{%url 'rental-database'%}">Order</a>
-      <a href="{%url 'vehicle-database'%}">Vehicle</a>
+  <div id="wrapper">
+    <div class="dropdown">
+      <button class="dropbtn">Database</button>
+      <div class="dropdown-content">
+        <a href="{%url 'customer-database'%}">Customer</a>
+        <a href="{%url 'rental-database'%}">Order</a>
+        <a href="{%url 'vehicle-database'%}">Vehicle</a>
+      </div>
     </div>
   </div>
-  <table class="center">
+
+  <table id="database">
+    <!-- Creates the table with the table headers -->
     <tr>
       <th>Car ID</th>
       <th>Car Name</th>
@@ -89,6 +72,7 @@ tr:nth-child(even) {
       <th>Car Wheelbase</th>
     </tr>
       {% for vehicle in vehicles %}
+      <!-- Fill in the row of the tables -->
             <tr>
               <td>{{vehicle.car_id}}</td>
               <td>{{vehicle.car_makename}}</td>

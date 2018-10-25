@@ -40,6 +40,7 @@ class Orders(models.Model):
         db_table = 'orders'
         unique_together = (('order_id', 'order_createdate'),)
 
+#The database given by the client
 class Rentaldatabase(models.Model):
     order_id = models.IntegerField(db_column='Order_ID', primary_key=True)  # Field name made lowercase.
     order_createdate = models.IntegerField(db_column='Order_CreateDate')  # Field name made lowercase.

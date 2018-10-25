@@ -1,4 +1,78 @@
 {% extends 'rental/base.html' %}
+
 {% block content %}
-      <h1>This is the homepage</h1>
+        <div class="Welcome" >
+            <p style="color:rgb(69, 130, 158);">
+                <font size="22">Welcome to Car Rental 79</font></p>
+            <p style="color:rgb(27, 55, 68);">
+                <font size="5">Search your favorite vehicle and deals on economy, 4-9 seater car and more</font></p>
+        </div><br>
+        <div class="SearchCarBox">
+            <div id="searchmenu">
+                <!--Top of the Search menu-->
+                <div id="layoutSearchmenuTop">
+                    <div id="sublayoutTop">
+                        <h3 style="color:rgb(4, 80, 80)">Search For A Vehicle</h3>
+                    </div>
+                    <h5 style="color:rgb(4, 80, 80)"><i class="fa fa-globe" aria-hidden="true"></i>&nbsp;Pick Up Location</h5>
+                        <form >
+                            <input type="text" placeholder="city, airport, station, district.." name="search">
+                        </form>
+
+                </div>
+                <!--Right of the Search menu-->
+                <div id="layoutSearchmenuRight" style="float:right">
+                    <h5 style="color:rgb(4, 80, 80)"><i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;Drop-Off Date</h5>
+                    <form >
+                        <input type="date" name="Dropdate">
+                    </form>
+                    <h5 style="color:rgb(4, 80, 80)"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;Time</h5>
+                    <form>
+                        <input type="time" name="usr_time">
+                    </form>
+                </div>
+                <!--Left of the Search menu-->
+                <div id="layoutSearchmenuLeft">
+                    <h5 style="color:rgb(4, 80, 80)"><i class="fa fa-calendar" aria-hidden="true">&nbsp;</i>Pick-Up Date</h5>
+                    <form >
+                        <input type="date" name="Dropdate">
+                    </form>
+                    <h5 style="color:rgb(4, 80, 80)"><i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;Time</h5>
+                    <form>
+                        <input type="time" name="usr_time">
+                    </form>
+                </div>
+                <!--Bottom of the Search menu-->
+                <div id="layoutSearchmenuBot-right"  style="float:right">
+                    <p>
+                        <i class="fa fa-check-square-o" aria-hidden="true"></i>No credit card fees<br>
+                        <i class="fa fa-check-square-o" aria-hidden="true"></i>No amendment fees<br>
+                        <i class="fa fa-check-square-o" aria-hidden="true"></i>24/7 phone support
+                    </p>
+                </div>
+                <div id="layoutSearchmenuBot-left">
+                    <a href="{% url 'rental-viewVehicle' %}" <input type="button" class="button" value="Search">SEARCH</a>
+                </div>
+            </div>
+        </div><br>
+        <!--Footer-->
+        <div id="footer">
+            <!--The left hand side of footer-->
+            <div id="footer-right" style="float:right">
+                <!--The middle hand side of footer-->
+                <div id="footer-middle" style="color:white; float:left"><br><br>
+                    <P>CarRental79.com is part of Worldwide Traveling Inc.,
+                        the world leader in online travel & related services. CarRental79.com (FCA Firm Reference No 0297378) is an Appointed Representative of World Tourism ,
+                        which is authorised and registered by the Booking Worldwide, Firm Reference No 26389288.</P>
+                </div>
+                <!--The image is placed in the subright div-->
+                <div id="footer-subright"style="float:right"></div>
+            </div>
+
+            <!--The right hand side of footer-->
+            <div id="footer-left"><br><br>
+                <h3 style="color:white">CarRental79.com</h3><br><br>
+                <p style="color:white">Copyright © 2018 AAR Traveling trading as CarRental79.com. All rights reserved<p>
+            </div>
+        </div>
 {% endblock content %}
